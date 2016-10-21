@@ -1,5 +1,9 @@
 package org.stone.DivideAndConquer.stack;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -10,6 +14,9 @@ import java.util.Stack;
  * @Description利用栈实现分隔符匹配问题
  * ()[]{}/*
  * 
+ * 此时的代码仅能处理单行的字符串，不能处理多行的匹配问题
+ * 可以在字符串输入那里加以判断，
+ * 当单行为  "##"时，判断为输入结束
  */
 public class MatchTest {
 
@@ -112,15 +119,46 @@ public class MatchTest {
 	public static void main(String[] args) throws Exception {
 		MatchTest m = new MatchTest();
 		Scanner scan = new Scanner(System.in);
-		System.out.println("请输入想要判断 java语句");
+		System.out.println("请输入想要判断的语句      单行    ##表示输入结束");
 		while (scan.hasNext()) {
-			if (m.isLegal(scan.nextLine())) {
-				System.out.println("Java语句正确");
-			} else {
-				System.out.println("错误：Java语句不合法");
+			String aimString="";
+			while (scan.hasNext()) {
+				String temString=scan.nextLine();
+				if (temString.equals("##")) {
+					break;
+				}
+				aimString+=temString;
 			}
-			System.out.println();
-			System.out.println("请输入 想要判断 java语句");
+			clear();
+			if (m.isLegal(aimString)) {
+				
+				System.out.println("语句正确");
+				
+			} else {
+				System.out.println("错误：语句不合法");
+			}
+			System.out.println("请输入想要判断的语句");
 		}
+		scan.close();
 	}
+	
+	
+	
+	/** 
+	 * @Description: 实现清屏的效果
+	 * @throws AWTException
+	 */
+	public static void clear() throws AWTException
+    {
+        Robot r = new Robot();
+        r.mousePress(InputEvent.BUTTON3_MASK);       // 按下鼠标右键
+        r.mouseRelease(InputEvent.BUTTON3_MASK);    // 释放鼠标右键
+        r.keyPress(KeyEvent.VK_CONTROL);             // 按下Ctrl键
+        r.keyPress(KeyEvent.VK_R);                    // 按下R键
+        r.keyRelease(KeyEvent.VK_R);                  // 释放R键
+        r.keyRelease(KeyEvent.VK_CONTROL);            // 释放Ctrl键
+        r.delay(100);       
+
+    }
+	
 }
