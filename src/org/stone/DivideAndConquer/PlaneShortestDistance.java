@@ -48,6 +48,7 @@ public class PlaneShortestDistance {
 	}
 
 	public static void main(String[] args) throws Exception {
+		
 		Scanner scan = new Scanner(System.in);
 		Node[] nodes = null;
 		while (scan.hasNext()) {
