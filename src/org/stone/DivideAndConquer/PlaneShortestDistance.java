@@ -63,7 +63,6 @@ public class PlaneShortestDistance {
 				throw new Exception("输入的格式不正确");
 			}
 			Node[] shortNodes = shortestDistance(nodes);
-
 			System.out.println("最短的两个点的坐标为：");
 			for (int i = 0; i < shortNodes.length; i++) {
 				System.out.println(shortNodes[i].toString());
