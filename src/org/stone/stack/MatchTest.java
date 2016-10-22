@@ -1,4 +1,4 @@
-package org.stone.DivideAndConquer.stack;
+package org.stone.stack;
 
 import java.awt.AWTException;
 import java.awt.Robot;
