@@ -7,8 +7,10 @@ package org.stone.entity;
  * @Description_平面上存储点信息的实体
  */
 public class Node implements Comparable<Node> {
-		private double x;
-		private double y;
+		public double x;
+		public double y;
+		
+		
 		
 		public Node(double x, double y) {
 			super();
