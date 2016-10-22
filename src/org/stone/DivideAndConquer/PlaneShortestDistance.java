@@ -1,4 +1,6 @@
 package org.stone.DivideAndConquer;
+
+
 /**
  * @Title_PlaneShortestDistance.java 
  * @author_Stone6762  
@@ -9,13 +11,11 @@ package org.stone.DivideAndConquer;
  * 任意两个点的距离中
  * 
  * 最短的那个
- * 
- * 
  */
 public class PlaneShortestDistance {
+	
 
 	public static void main(String[] args) {
-		
 		
 	}
 }
