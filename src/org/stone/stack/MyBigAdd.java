@@ -1,12 +1,11 @@
 package org.stone.stack;
 
-import java.util.Scanner;
 import java.util.Stack;
 
 /**
  * @ClassName_BigAdd大数相加
  * @author_Stone6762
- * @CreationTime_2014年12月28日 下午10:29:35
+ * @CreationTime_2016年10月22日17:47:12
  * @Description_算法描述
  * */
 /*
@@ -17,7 +16,6 @@ import java.util.Stack;
  */
 public class MyBigAdd {
 
-	private static Scanner scan;
 
 	/**
 	 * @Describe_将表示数字的字符串从高位到低位的形式压入栈_并去除其中的空格
