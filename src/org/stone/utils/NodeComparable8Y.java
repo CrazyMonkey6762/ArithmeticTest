@@ -8,7 +8,7 @@ import org.stone.entity.Node;
  * @ClassName_NodeComparable8Y
  * @author_Stone6762
  * @CreationTime_2016年10月25日 上午11:53:19
- * @Description_
+ * @Description_点按照y坐标进行排序的比较器
  */
 public class NodeComparable8Y implements Comparator<Node> {
 

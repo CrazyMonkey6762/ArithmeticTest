@@ -10,8 +10,6 @@ public class Node implements Comparable<Node> {
 		public double x;
 		public double y;
 		
-		
-		
 		public Node() {
 			super();
 		}
@@ -24,6 +22,8 @@ public class Node implements Comparable<Node> {
 			this.x = x;
 			this.y = y;
 		}
+		
+		//默认按照x坐标进行比较，如果x相等，再按照y进行比较
 		@Override
 		public int compareTo(Node node) {
 			//按照x排序，x相等时按照y排序

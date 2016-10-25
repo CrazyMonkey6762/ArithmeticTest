@@ -54,6 +54,7 @@ public class PlaneShortestDistance {
 		// 3.1获取中间的备选点
 		List<Node> list = new ArrayList<Node>();
 		for (int i = low; i <= height; i++) {
+			//如果横坐标都超出了shotestDistance，那么肯定不可能成为最短距离的候选点
 			if ((nodes[i].x > nodes[mid].x - shotestDistance)
 					&& (nodes[i].x < nodes[mid].x + shotestDistance)) {
 				list.add(nodes[i]);
@@ -65,9 +66,10 @@ public class PlaneShortestDistance {
 		Arrays.sort(tempNodes, 0, tempNodes.length, new NodeComparable8Y());
 		// 3.2求备选点和shotestDistance间的最小值
 		for (int i = 0; i < tempLength; i++) {
-			//最多只有6个点
+			//由格子原理可以求得最多只有6个点
 			int k = (i + 7) > tempLength ? tempLength : i + 7;
 			for (int j = i + 1; j < k; j++) {
+				//因为是按照y坐标排序的，一旦i和j的y坐标大于shotestDistance，那么下面的j点与i的距离肯定更大
 				if (Math.abs(tempNodes[j].y - tempNodes[i].y) >= shotestDistance) {
 					break;
 				}
@@ -100,12 +102,10 @@ public class PlaneShortestDistance {
 	}
 
 	public static void main(String[] args) throws Exception {
-
 		Scanner scan = new Scanner(System.in);
 		int nodeNumber = 0;
 		System.out.println("请先输入平面点的个数   再输入各个点的坐标，      中间用空格分割即可");
 		while (scan.hasNext()) {
-
 			try {
 				nodeNumber = scan.nextInt();
 				nodes = new Node[nodeNumber];
@@ -115,11 +115,10 @@ public class PlaneShortestDistance {
 			} catch (Exception e) {
 				throw new Exception("输入的格式不正确");
 			}
+			//按照x坐标排序，然后再操作
 			Arrays.sort(nodes);
 			double result = shortestDistance(0, nodeNumber - 1);
-
 			System.out.println("最短距离为" + result);
-
 			System.out.println("请先输入平面点的个数   再输入各个点的坐标，     中间用空格分割即可");
 		}
 	}
