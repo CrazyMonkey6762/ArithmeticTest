@@ -12,6 +12,13 @@ public class Node implements Comparable<Node> {
 		
 		
 		
+		public Node() {
+			super();
+		}
+		public Node(double x) {
+			super();
+			this.x = x;
+		}
 		public Node(double x, double y) {
 			super();
 			this.x = x;
