@@ -7,6 +7,8 @@ import java.awt.event.KeyEvent;
 import java.util.Scanner;
 import java.util.Stack;
 
+import org.stone.utils.MyConsoleClear;
+
 /**
  * @Title_MatchTest.java 
  * @author_Stone6762  
@@ -129,7 +131,7 @@ public class MatchTest {
 				}
 				aimString+=temString;
 			}
-			clear();
+			MyConsoleClear.clear();
 			if (m.isLegal(aimString)) {
 				
 				System.out.println("语句正确");
@@ -138,27 +140,23 @@ public class MatchTest {
 				System.out.println("错误：语句不合法");
 			}
 			System.out.println("请输入想要判断的语句");
+			
+			System.out.println("是否继续？(Y/N)");
+			String string = scan.next();
+			if (string.equals("Y") || string.equals("y")) {
+				MyConsoleClear.clear();
+				System.out.println("请输入想要判断的语句      单行    ##表示输入结束");
+			} else {
+				break;
+			}
+			
+			
+			
 		}
 		scan.close();
 	}
 	
 	
 	
-	/** 
-	 * @Description: 实现清屏的效果
-	 * @throws AWTException
-	 */
-	public static void clear() throws AWTException
-    {
-        Robot r = new Robot();
-        r.mousePress(InputEvent.BUTTON3_MASK);       // 按下鼠标右键
-        r.mouseRelease(InputEvent.BUTTON3_MASK);    // 释放鼠标右键
-        r.keyPress(KeyEvent.VK_CONTROL);             // 按下Ctrl键
-        r.keyPress(KeyEvent.VK_R);                    // 按下R键
-        r.keyRelease(KeyEvent.VK_R);                  // 释放R键
-        r.keyRelease(KeyEvent.VK_CONTROL);            // 释放Ctrl键
-        r.delay(100);       
-
-    }
 	
 }
