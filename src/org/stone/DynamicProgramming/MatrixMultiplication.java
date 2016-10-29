@@ -3,6 +3,8 @@ package org.stone.DynamicProgramming;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import org.stone.utils.MyConsoleClear;
+
 /**
  * @ClassName_MatrixMultiplication
  * @author_Stone6762
@@ -121,8 +123,14 @@ public class MatrixMultiplication {
 			for (int i = 0; i < d.length; i++) {
 				System.out.println(Arrays.toString(d[i]));
 			}
-			
-			
+			System.out.println("是否继续？(Y/N)");
+			String string = scan.next();
+			if (string.equals("Y") || string.equals("y")) {
+				MyConsoleClear.clear();
+				System.out.println("请先输入矩阵的个数n，以及对应的n+1表示行列的值");
+			} else {
+				break;
+			}
 		}
 	}
 }
