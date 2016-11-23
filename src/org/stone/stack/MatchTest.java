@@ -42,7 +42,7 @@ public class MatchTest {
 	 * @param str
 	 * @return
 	 */
-	public int verifyFlag(String str) {
+	private int verifyFlag(String str) {
 		if ("(".equals(str) || "[".equals(str) || "{".equals(str)
 				|| "/*".equals(str)) {
 			return LEFT;
@@ -62,7 +62,7 @@ public class MatchTest {
 	 * @param str2
 	 * @return
 	 */
-	public boolean matches(String str1, String str2) {
+	private boolean matches(String str1, String str2) {
 		if (("(".equals(str1) && ")".equals(str2))
 				|| ("{".equals(str1) && "}".equals(str2))
 				|| ("[".equals(str1) && "]".equals(str2))

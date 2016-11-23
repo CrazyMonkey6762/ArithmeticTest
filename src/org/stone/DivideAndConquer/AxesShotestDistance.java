@@ -76,11 +76,11 @@ public class AxesShotestDistance {
 		return shotestDistance;
 	}
 
-	public static double min(double a, double b) {
+	private static double min(double a, double b) {
 		return a > b ? b : a;
 	}
 
-	public static double distance(Node nodeA, Node nodeB) {
+	private static double distance(Node nodeA, Node nodeB) {
 		return Math.abs(nodeA.x - nodeB.x);
 	}
 

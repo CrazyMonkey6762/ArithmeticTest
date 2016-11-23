@@ -84,7 +84,7 @@ public class PlaneShortestDistance {
 	 * @param b
 	 * @return
 	 */
-	public static double min(double a, double b) {
+	private static double min(double a, double b) {
 		return a > b ? b : a;
 	}
 
